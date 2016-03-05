@@ -17,6 +17,6 @@
     
     <body>
         <h1>NBA Basketball Players</h1>
-        <%=table %>
+        <%= table %>
     </body>
 </html>
