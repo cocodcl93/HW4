@@ -9,19 +9,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>NBA basketball players read </title>
+        <link rel="stylesheet" type ="text/css" href="readstyle.css" media="screen">
     </head>
     
-    <% String table = (String) request.getAttribute("table"); %>
+   <% String table = (String) request.getAttribute("table"); %>
     
     
     <body>
         <h1>NBA Basketball Players</h1>
         
-        <%= table %>
+        <div id="readtable"> 
+            
+          <%= table %>
+       
+        </div>
+        
+        
         
         <br><br>
         
-        <a href ="add">Add A New Player</a>
+        <a href ="add"><p style="text-align: center">Add A New Player</p></a>
     
     </body></html>

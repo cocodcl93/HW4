@@ -74,8 +74,43 @@ public class ReadQuery {
         
         
         String table ="";
+        table +="<table>";
         
-        table +="<table border=1>";
+            table +="<tr>";
+            
+            table +="<th>";
+            table +="Player ID";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="First Name";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="Last Name";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="Age";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="Player Number";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="Team";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="Position";
+            table +="</th>";
+            
+            table +="<th>";
+            table +="Update";
+            table +="</th>";
+            
+            table +="</tr>";
         
         try {
             while(this.results.next()){
