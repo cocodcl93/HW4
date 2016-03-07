@@ -17,6 +17,11 @@
     
     <body>
         <h1>NBA Basketball Players</h1>
+        
         <%= table %>
-    </body>
-</html>
+        
+        <br><br>
+        
+        <a href ="add">Add A New Player</a>
+    
+    </body></html>

@@ -21,23 +21,27 @@ public class ReadQuery {
     
     public ReadQuery(){
         
-    Properties props =new Properties();
-    InputStream instr = getClass().getResourceAsStream("dbConn.properties");
+      
+            Properties props =new Properties();
+            InputStream instr = getClass().getResourceAsStream("dbConn.properties");
+            
         try {
             props.load(instr);
         } catch (IOException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
+           
         try {
             instr.close();
         } catch (IOException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     
-    String driver = props.getProperty("driver.name");
-    String url = props.getProperty("server.name");
-    String username = props.getProperty("user.name");
-    String passwd = props.getProperty("user.password");
+        String driver = props.getProperty("driver.name");
+        String url = props.getProperty("server.name");
+        String username = props.getProperty("user.name");
+        String passwd = props.getProperty("user.password");
+       
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
@@ -48,10 +52,12 @@ public class ReadQuery {
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-            }
+       
+    }
     
     
     public void doRead(){
+       
         
         try {
             String query="Select * from players";
@@ -111,10 +117,17 @@ public class ReadQuery {
                 table +="<td>";
                 table +=player.getPosition();
                 table +="</td>";
-                
-                
+
+                table += "<td>";
+                table += "<a href=delete?playerID=" + player.getPlayerID() + "> Delete </a>";
+                table += "</td>";
+
                 table +="</tr>";
+                
+                
             }
+
+
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
